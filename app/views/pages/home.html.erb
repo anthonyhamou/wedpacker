@@ -1,0 +1,176 @@
+<div class="banner">
+  <div>
+    <h1>Votre mariage à portée de clic</h1>
+    <p>Les meilleurs packages de prestations sont sur Wedpacker</p>
+    <%= link_to "Commencer", new_bundle_path, class: 'btn-validate' %>
+  </div>
+</div>
+<div class="container">
+  <div class="intermediate-title">
+    <h4>Dites adieu aux <strong>longs mois</strong> pour trouver tous les <strong>prestataires de votre mariage !</strong> Faites confiance à nos <strong>packages qui répondront à vos attentes.</strong></h4>
+  </div>
+  <div class="content">
+    <div class="content-child">
+      <h4>Qui a dit <strong>qu'organiser un mariage </strong>était compliqué ?</h4>
+      <p>Ici, chez Wedpacker, nous savons à quel point l'organisation d'un mariage peut être pénible. En effet, les rendez-vous pour rencontrer, traiteurs, photographes, fleuristes, les visites de toutes les salles possibles et imagineables dans la région ciblée ... C'est pourquoi, nous essayons de vous simplifiez le travail et de tout compacter, compiler, compresser en un produit. Après avoir selectionné les meilleurs services de mariage possible en France, notre algorithme de matching nous permet de vous proposer des packages contenant tout ce dont vous avez besoin pour votre mariage. Et tout ça en seulement quelques clics ! </p>
+    </div>
+    <div class="photo">
+      <%= image_tag 'homepage-image-1.jpg', style: "border-radius: 4px" %>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="intermediate-title">
+    <h4><strong>Service intuitif,</strong></h4>
+    <h4>en seulement trois étapes !</h4>
+  </div>
+  <div class="homepage-cards">
+    <div class="homepage-card">
+      <div class="hp-card-number-container">
+        <div class="number-in-circle">
+          <h3 style="margin: 0px; font-weight: 700">1</h3>
+        </div>
+      </div>
+      <div class="content-homepage-card">
+        <div class="hp-card-title-container">
+          <h4><i class="fas fa-search"></i></i> Recherchez</h4>
+        </div>
+        <p>Commencez votre recherche en indiquant date, région, nombre d'invités et un budget maximum. Ensuite, précisez-nous les prestations souhaitées parmi les six types proposés.</p>
+      </div>
+    </div>
+    <div class="angle-hp-card">
+      <i class="fas fa-angle-right"></i>
+    </div>
+    <div class="homepage-card">
+      <div class="hp-card-number-container">
+        <div class="number-in-circle">
+          <h3 style="margin: 0px; font-weight: 700">2</h3>
+        </div>
+      </div>
+      <div class="content-homepage-card">
+        <div class="hp-card-title-container">
+          <h4><i class="fas fa-lock"></i> Choisissez</h4>
+        </div>
+        <p>Notre algorithme vous pré-sélectionne les 3 meilleurs prestataires pour chaque catégorie. Cliquez sur le cadenas pour valider votre choix !</p>
+      </div>
+    </div>
+    <div class="angle-hp-card">
+      <i class="fas fa-angle-right"></i>
+    </div>
+    <div class="homepage-card">
+      <div class="hp-card-number-container">
+        <div class="number-in-circle">
+          <h3 style="margin: 0px; font-weight: 700">3</h3>
+        </div>
+      </div>
+      <div class="content-homepage-card">
+        <div class="hp-card-title-container">
+          <h4><i class="fas fa-credit-card"></i> Payez</h4>
+        </div>
+        <p>Nous vous permettons de mutualiser le règlement de votre mariage en un. Payez tous les services que vous avez sélectionnés en ligne (paiement sécurisé).</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="intermediate-title">
+    <h4>Ce que <strong>nos clients</strong> pensent de nous.</h4>
+  </div>
+  <div class="review-cards">
+    <div class="review-card">
+      <div class="header-review">
+        <div class="avatar">
+          <%= image_tag "http://kitt.lewagon.com/placeholder/users/juliends", class: 'avatar-review' %>
+        </div>
+        <div class="name-and-desc">
+          <div class="client-name">
+            <h5>Julien D.</h5>
+          </div>
+          <div class="client-desc">
+            <p><i>Marié en octobre 2017, grâce à Wedpacker.</i></p>
+          </div>
+        </div>
+      </div>
+      <div class="stars">
+        <% 4.times do %>
+          <i class="fas fa-star"></i>
+        <% end %>
+        <i class="far fa-star"></i>
+      </div>
+      <div class="client-review">
+        <p>Le service Wedpacker est <strong>formidable</strong>. Tous mes amis me disaient qu'organiser son mariage était une <strong>longue épreuve</strong>. En seulement <strong>quelques clics</strong> Wedpacker m'a concocté le mariage parfait !</p>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="header-review">
+        <div class="avatar">
+          <%= image_tag "https://avatars2.githubusercontent.com/u/34319519?v=4", class: 'avatar-review' %>
+        </div>
+        <div class="name-and-desc">
+          <div class="client-name">
+            <h5>Adeline B.</h5>
+          </div>
+          <div class="client-desc">
+            <p><i>Mariée en mai 2018, grâce à Wedpacker.</i></p>
+          </div>
+        </div>
+      </div>
+      <div class="stars">
+        <% 5.times do %>
+          <i class="fas fa-star"></i>
+        <% end %>
+      </div>
+      <div class="client-review">
+        <p>Service <strong>d'une rare qualité</strong> ! Un peu sceptique au départ, j'ai finalement été <strong>éblouie</strong> par le mariage que m'a concocté Wedpacker. Le <strong>paiement en ligne</strong> est un vrai plus également ! Merci encore Wedpacker team !</p>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="header-review">
+        <div class="avatar">
+          <%= image_tag "http://kitt.lewagon.com/placeholder/users/krokrob", class: 'avatar-review' %>
+        </div>
+        <div class="name-and-desc">
+          <div class="client-name">
+            <h5>Kevin R.</h5>
+          </div>
+          <div class="client-desc">
+            <p><i>Marié en juin 2017, grâce à Wedpacker.</i></p>
+          </div>
+        </div>
+      </div>
+      <div class="stars">
+        <% 5.times do %>
+          <i class="fas fa-star"></i>
+        <% end %>
+      </div>
+      <div class="client-review">
+        <p>Service et équipe <strong>au top</strong>! On peut vraiment leur <strong>faire confiance</strong> sur les propositions de prestataires qu'ils nous soumettent. En plus de ça leur nom est <strong>vraiment marrant </strong>!</p>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="header-review">
+        <div class="avatar">
+          <%= image_tag "http://kitt.lewagon.com/placeholder/users/yasminas27", class: 'avatar-review' %>
+        </div>
+        <div class="name-and-desc">
+          <div class="client-name">
+            <h5>Yasmina S.</h5>
+          </div>
+          <div class="client-desc">
+            <p><i>Mariée en janvier 2018, grâce à Wedpacker.</i></p>
+          </div>
+        </div>
+      </div>
+      <div class="stars">
+        <% 4.times do %>
+          <i class="fas fa-star"></i>
+        <% end %>
+        <i class="fas fa-star-half"></i>
+      </div>
+      <div class="client-review">
+        <p>Très bon service. Très <strong>pratique</strong> également. Je cherchais à organiser mon mariage <strong>rapidement</strong> et <strong>sans me prendre la tête</strong>. Mission réussie ! Je <strong>recommande</strong> vivement Wedpacker !</p>
+      </div>
+    </div>
+  </div>
+</div>
+

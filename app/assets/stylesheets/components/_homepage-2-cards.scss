@@ -1,0 +1,91 @@
+
+.homepage-cards-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepage-card-2 {
+  width: 240px;
+  height: 275px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 1px 1px 2px rgba(45, 64, 89, 0.25);
+  padding: 20px;
+}
+
+.number-in-circle-2 {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  color: $blue;
+  text-align: center;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 2px 2px 2px rgba(45, 64, 89, 0.25);
+}
+
+.hp-card-number-container-2 {
+  display: flex;
+  justify-content: space-around;
+}
+
+.hp-card-title-container-2 {
+  display: flex;
+  justify-content: space-around;
+}
+
+.content-homepage-card-2 {
+  // display:flex;
+  // justify-content: space-around;
+  color: $blue;
+  h5 {
+    font-weight: 700;
+  }
+  p {
+    color: $blue;
+    text-align: justify;
+    font-size: 16px;
+
+  }
+}
+
+.fa-search, .fa-lock, .fa-credit-card {
+  color: $yellow;
+  font-size: 20px;
+}
+
+.angle-hp-card-2 {
+  color: $blue;
+  font-size: 44px;
+  padding: 25px;
+}
+
+.intermediate-title-2 {
+  text-align: center;
+  padding: 40px;
+  strong {
+    text-decoration: underline;
+    text-decoration-color: $yellow;
+  }
+}
+.blue-title-body-2 {
+  color: $blue;
+  font-weight: 700;
+}
+
+strong {
+  color: $blue;
+}
+
+.content-2 {
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  .content-child-2 {
+    padding-right: 20px;
+  }
+}

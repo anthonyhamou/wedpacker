@@ -1,0 +1,116 @@
+.results-container {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  align-items: flex-start;
+}
+
+.places-content {
+  flex: 0 0 50%;
+  .places-details {
+    background-color: white;
+    border-radius: 4px;
+    position: relative;
+    .places-images {
+      height: 50vh;
+      background-size: cover;
+      background-position: center;
+      border-top-right-radius: 4px;
+      border-top-left-radius: 4px;
+    }
+  }
+}
+
+.place-description {
+  position: absolute;
+  top: 100%;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 30000;
+  background: white;
+  overflow: hidden;
+  transition: all ease 0.3s;
+  p {
+    font-size: 16px;
+    line-height: 25px;
+  }
+  &.open {
+    top: 0;
+    padding: 23px 25px;
+    color: $blue;
+  }
+}
+
+.place-description-content{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  .fa-angle-down {
+    position: absolute;
+    right: 10px;
+    bottom: 0px;
+    font-size: 22px;
+    color: $blue;
+  }
+}
+
+.fa-quote-left{
+  margin-right: 10px;
+}
+
+.fa-quote-right{
+  margin-left: 10px;
+}
+
+a.card-details-flex {
+  display: flex;
+  align-items: center;
+  &:hover {
+    font-weight: normal !important;
+    font-size: 14px !important;
+  }
+  p {
+    margin: 0 10px;
+  }
+  .fa-angle-up {
+    font-size: 22px;
+  }
+}
+
+// .carousel-inner > .item > img {
+//   height: 70vh;
+//   width: 600px;
+//   object-fit: fill;
+// }
+
+.map-container {
+  flex: 0 0 45%;
+}
+
+#lock {
+
+  margin: 15px auto;
+}
+
+
+#map {
+  height: 72vh;
+}
+
+#map-box {
+  color: $blue;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Karla";
+}
+
+.carousel-control {
+  z-index: 10;
+  text-shadow: 0 1px 0px rgba(0, 0, 0, 0.4) !important;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%) !important;
+}
+

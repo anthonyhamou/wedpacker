@@ -1,0 +1,16 @@
+<%= form_tag bundle_payments_path(bundle), id: "payment-form" do %>
+  <%= hidden_field_tag :stripeToken, nil, id: "stripe-token" %>
+
+  <button id="payment-button"
+    class="btn-validate"
+    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    data-logo="<%= image_url 'logo_payment.png' %>"
+    data-locale="fr"
+    data-name="Mon package de mariage"
+    data-description="Pour <%= bundle.suppliers.count %> prestation(s)"
+    data-email="<%= current_user.email %>"
+    data-amount="<%= bundle.amount_cents %>"
+    data-currency="<%= bundle.amount.currency %>">
+    Payer en ligne
+  </button>
+<% end %>

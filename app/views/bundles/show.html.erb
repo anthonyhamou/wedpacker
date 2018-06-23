@@ -1,0 +1,88 @@
+<% if @bundle.state == "pending" %>
+  <div class="container">
+    <div class="thread">
+      <div class="b-box b-box--dots">
+        <span class="b-box--dots__item is-active"></span>
+        <span class="b-box--dots__item is-active"></span>
+        <span class="b-box--dots__item is-active"></span>
+        <span class="b-box--dots__item is-active"></span>
+        <span class="b-box--dots__item big">
+          <span data-amount=<%= @bundle.amount.to_i %> id="amount">
+            <%= humanized_money(@bundle.amount) %>
+          </span>
+          €
+        </span>
+      </div>
+
+
+      <div class="list-items">
+        <div class="item-last"><%= link_to "Recherche", new_bundle_path %></div>
+        <div class="item-last"><%= link_to "Lieu", location_bundle_path(@bundle) %></div>
+        <div class="item-last"><%= link_to "Services", services_bundle_path(@bundle) %></div>
+        <div class="item-last"><%= link_to "Récapitulatif", bundle_path(@bundle) %></div>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 40px">
+      <% @bundle.bundle_lines.each do |bundle_line| %>
+        <div class="col-xs-8 col-xs-offset-2 bundle-recap" data-id="<%= bundle_line.id %>">
+          <div class="list-element">
+            <% if bundle_line.supplier.service.category == "lieu" %>
+              <div class="list-image"><%= image_tag 'lieu.png', class:'extra-small-picture' %></div>
+            <% elsif bundle_line.supplier.service.category == "animations"%>
+              <div class="list-image"><%= image_tag 'animations.png', class:'extra-small-picture' %></div>
+            <% elsif bundle_line.supplier.service.category == "traiteur"%>
+            <div class="list-image"><%= image_tag 'traiteur.png', class:'extra-small-picture' %></div>
+            <% elsif bundle_line.supplier.service.category == "musique"%>
+             <div class="list-image"><%= image_tag 'musique.png', class:'extra-small-picture' %></div>
+            <% elsif bundle_line.supplier.service.category == "photographe"%>
+            <div class="list-image"><%= image_tag 'photographe.png', class:'extra-small-picture' %></div>
+            <% elsif bundle_line.supplier.service.category == "fleuriste"%>
+            <div class="list-image"><%= image_tag 'fleuriste.png', class:'extra-small-picture' %></div>
+            <% end %>
+
+
+            <div class="list-title"><h5><%= bundle_line.supplier.service_name  %></h5></div>
+            <div class="price">
+              <div><h5><%= humanized_money(bundle_line.amount) %>€</h5></div>
+            </div>
+              <%= link_to bundle_line_path(bundle_line), method: :delete, data: { confirm: "Etes vous sûr de vouloir supprimer cette prestation ?" } do %>
+                <i class="fas fa-times-circle trash"></i>
+              <% end %>
+            <div class="angle">
+              <a class="" data-toggle="collapse" href="#bundle-line-details-<%= bundle_line.id %>" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <i class="fas fa-angle-right"></i>
+              </a>
+            </div>
+          </div>
+          <div class="collapse" id="bundle-line-details-<%= bundle_line.id %>">
+            <div class= "card card-body">
+              <div class="card-image">
+               <%= cl_image_tag bundle_line.supplier.images.first.photo, crop: :fill, height: 400, width: 400 %>
+              </div>
+              <div class="description">
+                <h6><strong><%= bundle_line.supplier.service_name %></strong></h6>
+                <p> <%= bundle_line.supplier.description %></p>
+                <p>
+                  <strong>Le petit <i class="fas fa-plus plus"></i></strong> : <%= bundle_line.supplier.originality%>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <%= content_for :before_js do %>
+      <script src="https://checkout.stripe.com/checkout.js"></script>
+    <% end %>
+
+    <div class="payment-info">
+      <h3>Prix Total:</h3>
+      <h4><strong><%= humanized_money(@bundle.amount) %>€</strong></h4>
+      <%= render "pending_payment", bundle: @bundle %>
+    </div>
+
+  </div>
+<% else %>
+    <!-- display confirmation message -->
+    <%= render "confirmation" %>
+<% end %>

@@ -1,0 +1,38 @@
+.banner-v2 {
+  margin-top: 30px;
+  height: 450px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 1px 1px 2px rgba(45, 64, 89, 0.25);
+  margin-bottom: 40px;
+}
+
+
+
+.small-banner {
+  margin-right: 10px;
+  width: 670px;
+  height: 305px;
+  background-size: cover !important;
+  background-image: asset-url('small-banner-1');
+  border-radius: 3px;
+  h1 {
+    color: transparent;
+  }
+}
+
+.content-banner {
+  margin-left: 10px;
+  color: $blue;
+  a {
+    margin: 0;
+  }
+}
+
+.underline {
+  text-decoration: underline;
+  text-decoration-color: $yellow;
+}

@@ -1,0 +1,110 @@
+<div class="container">
+  <% if @places_suppliers == [] %>
+    <div>
+      <h3>Nous sommes désolés.<br>Aucun résultat ne correspond à votre recherche</h3>
+      <%= link_to "Relancer une recherche", new_bundle_path, class: "btn-validate" %>
+    </div>
+  <% else %>
+    <div class="thread">
+      <div class="b-box b-box--dots">
+        <span class="b-box--dots__item is-active"></span>
+        <span class="b-box--dots__item is-active"></span>
+        <span class="b-box--dots__item"></span>
+        <span class="b-box--dots__item"></span>
+        <span class="b-box--dots__item big">
+          <span data-amount=<%= @bundle.amount.to_i %> id="amount">
+            <%= humanized_money(@bundle.amount) %>
+          </span>
+          €
+        </span>
+      </div>
+      <div class="list-items">
+        <div class="item"><%= link_to "Recherche", new_bundle_path %></div>
+        <div class="item"><%= link_to "Lieu", location_bundle_path(@bundle) %></div>
+        <div class="item"></div>
+        <div class="item"></div>
+      </div>
+    </div>
+
+    <div class="results-container">
+      <!-- Column with Map -->
+      <div class="map-container">
+        <div id="map" data-markers="<%= @markers.to_json %>"></div>
+      </div>
+      <!-- Column with Card -->
+      <div class="places-content">
+        <!--<%# @places_suppliers.each do |supplier| %>
+                <%#= cl_image_tag supplier.images.first.photo, width: 700, crop: :fit, class: "places-images supplier-photo #{"hidden" unless @places_suppliers.first == supplier}", id: "supplier-photo-#{supplier.id}" %>
+            <%# end %> -->
+
+        <!-- Carousel -->
+        <div class = places-details>
+          <% @places_suppliers.each do |supplier| %>
+            <div id="supplier-photo-<%= supplier.id %>" class="supplier-photo <%= "hidden" unless @places_suppliers.first == supplier %> ">
+              <div id="carousel-supplier-<%= supplier.id %>" class="carousel slide" data-ride="carousel" data-interval="false">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <% supplier.images.each_with_index do |_image, index| %>
+                      <li data-target="#carousel-supplier-<%= supplier.id %>" data-slide-to="<%= index %>" class="<%= 'active' if index == 0 %>"></li>
+                    <% end %>
+                </ol>
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <% supplier.images.each_with_index do |image, index| %>
+                      <div class="places-images item<%= ' active' if index == 0 %>" style='background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(<%= cl_image_path image.photo %>);'>
+                        <%#= cl_image_tag image.photo, width: 500, crop: :fit, class: "places-images" %>
+                      </div>
+                    <% end %>
+                </div>
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-supplier-<%= supplier.id %>" role="button" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-supplier-<%= supplier.id %>" role="button" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+            <!-- Carousel end -->
+            <div class="card-supplier-footer supplier-details <%= "hidden" unless @places_suppliers.first == supplier %>" id="supplier-details-<%= supplier.id %>">
+              <h3><%= supplier.service_name %></h3>
+              <p class="card-rating">
+                <% if supplier.avg_rating >= 4.5 && supplier.avg_rating <= 4.75 %>
+                  <% supplier.avg_rating.to_i.times do %>
+                    <i class="fas fa-star"></i>
+                  <% end %>
+                  <i class="fas fa-star-half"></i>
+                <% else %>
+                  <% supplier.avg_rating.ceil.times do %>
+                      <i class="fas fa-star"></i>
+                    <% end %>
+                <% end %>
+              </p>
+              <p class="card-price" ><%= humanized_money(supplier.price * @event_days.count) %>€</p>
+              <%= link_to "#", class: "card-details card-details-flex", id: "button-details" do %>
+                <p>Détails </p><i class="fas fa-angle-up"></i>
+              <% end %>
+            </div>
+            <div class="place-description supplier-description <%= "hidden" unless @places_suppliers.first == supplier %>" id="supplier-description-<%= supplier.id %>">
+              <div class="place-description-content">
+                <p><i class="fas fa-quote-left"></i> <%= supplier.description %> <i class="fas fa-quote-right"></i></p>
+                <i class="fas fa-angle-down"></i>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <div>
+          <%= form_tag bundle_bundle_lines_path(@bundle), method: :post, class: "form-inline text-right" do %>
+            <%= hidden_field_tag :supplier_id, @places_suppliers.first.id %>
+            <%= button_tag class:'btn-validate', id: 'lock', type: "submit" do %>
+              <span>Réserver</span>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+  <% end %>
+</div>

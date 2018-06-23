@@ -1,0 +1,104 @@
+.list-element {
+  color: $blue;
+  background: white;
+  width: 100%;
+  height: 100px;
+  padding: 40px;
+  border-radius: 6px;
+  border: solid $blue 1px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  h3, h4 {
+    font-weight: 700;
+  }
+  margin: 5px 0;
+}
+
+.active-element {
+  color: $yellow;
+  background-color: $blue;
+  width: 100%;
+  height: 100px;
+  padding: 40px;
+  border-radius: 6px;
+  border: solid $blue 2px;
+  border-right: solid $blue 4px;
+  border-left: solid $blue 4px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  h3, h4 {
+    font-weight: 700;
+  }
+  a {
+    color: #FFD460;
+  }
+}
+
+.list-title {
+  flex: 1 0 auto;
+  text-align: justify;
+  padding-left: 20px;
+}
+
+.angle {
+  font-size: 64px;
+}
+
+.price {
+  flex: 0 0 100px;
+  font-size: 36px;
+  padding-left: 20px;
+  margin-right: 20px;
+}
+
+.list-image {
+  margin-right: 25px;
+}
+.first {
+  border-top: solid $blue 4px;
+}
+
+.last {
+  border-bottom: solid $blue 4px;
+}
+.card-body {
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  height: 500px;
+  p {
+    text-align: justify;
+    font-size: 14px;
+  }
+  .description {
+    width: 40%;
+  }
+}
+.card-image {
+  margin-top: 20px;
+  width: 400px;
+  height: 400px;
+
+}
+
+.plus {
+  font-size: 16px;
+}
+.trash {
+  color: $blue;
+  text-align: right;
+  margin-right: 25px;
+}
+.supprimer {
+}
+
+.angle {
+    font-size: 20px;
+}
+#payment-button {
+  display: block;
+  margin: auto;
+  text-align: center;
+}

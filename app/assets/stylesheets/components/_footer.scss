@@ -1,0 +1,44 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100px;
+  padding: 0px 50px;
+  color: rgba(0,0,0,0.3);
+  background-color: #efefef;
+  bottom: 0;
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  text-transform: capitalize;
+  margin-top: 10px;
+  a:hover {
+    color:$yellow;
+  }
+
+}
+.social-links a {
+  color: $blue;
+  opacity: 1;
+  text-decoration: none;
+  font-size: 24px;
+  border: 1px solid $blue;
+}
+
+.social-links a:hover {
+  opacity: 0.8;
+  font-size: 30px;
+}
+
+.social {
+  padding: 0px 20px;
+}
+
+
+.footer h6 {
+  color: $blue;
+}

@@ -1,0 +1,61 @@
+.modal-content {
+  border-radius: 7px;
+}
+
+.modal-header {
+  padding: 10px;
+  background-color: $blue;
+  color: $yellow;
+  border-radius: 4px;
+  text-align: center;
+  border-bottom: 1px solid $yellow;
+  h4 {
+    font-size: 18px;
+    font-weight: 700;
+  }
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid $yellow;
+  #card-price {
+    margin-top: 18px;
+    font-weight: 600;
+  }
+}
+
+
+.service-photos {
+  background-size: cover;
+  height: 100px;
+}
+
+
+.service-description {
+  text-align: justify;
+  margin: 10px;
+  color: $blue;
+  p {
+    font-size: 14px;
+  }
+
+}
+
+.carousel-image {
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+}
+
+.glyphicon {
+  color: white;
+}
+
+.glyphicon-chevron-left {
+  margin-left: -30px !important;
+}
+
+.glyphicon-chevron-right {
+  margin-right: -30px !important;
+}

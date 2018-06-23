@@ -1,0 +1,150 @@
+<div class="container">
+  <div class="thread">
+    <div class="b-box b-box--dots">
+      <span class="b-box--dots__item is-active"></span>
+      <span class="b-box--dots__item"></span>
+      <span class="b-box--dots__item"></span>
+      <span class="b-box--dots__item"></span>
+      <span class="b-box--dots__item big"> 0 € </i></span>
+    </div>
+    <div class="list-items">
+      <div class="item"><%= link_to "Recherche", new_bundle_path %></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+  </div>
+  <div class="row form-row">
+    <div class="col-xs-6">
+      <h4>Remplissez le formulaire et cliquez <br>sur les prestations souhaitées</h4>
+      <div class="form-search">
+        <%= form_tag bundles_path do %>
+          <div class="date-form">
+            <%= text_field_tag :starts_on, params[:starts_on], class: "form-control styled-form datepicker start_date small-form", placeholder: "Du..." %>
+            <%= text_field_tag :ends_on, params[:ends_on], class: "form-control styled-form datepicker end_date small-form", placeholder: "Au..." %>
+          </div>
+          <div class="location-form">
+            <%= text_field_tag :where, params[:where], class: "form-control styled-form", placeholder: "Oú ?" %>
+          </div>
+          <div class="capacity-budget-form">
+            <%= text_field_tag :capacity, params[:capacity], class: "form-control styled-form small-form", placeholder: "Nombre d'invités" %>
+            <%= text_field_tag :budget, params[:budget], class: "form-control styled-form small-form", placeholder: "Budget" %>
+          </div>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="service-cards">
+        <div class="row ">
+          <%= check_box_tag "categories[]", :lieu, checked=false, id: :categories_place, class: "categories" %>
+            <div class="col-xs-4">
+              <label for="categories_place" class="categories_place" id='location' >
+                <div class="service-card not-selected label-handle" >
+                  <div>
+                    <%= image_tag 'lieu.png', class:'small-picture' %>
+                    <h4>Lieu</h4>
+                  </div>
+                </div>
+                <div class="service-card chosen-service selected hidden categories_place label-handle" id="location">
+                  <div>
+                    <i class="far fa-check-circle"></i>
+                    <h4>Lieu ajouté à votre recherche</h4>
+                  </div>
+                </div>
+              </label>
+            </div>
+          <%= check_box_tag "categories[]", :traiteur, checked=false, id: :categories_catering, class: "categories" %>
+            <div class="col-xs-4">
+              <label for="categories_catering">
+                <div class="service-card not-selected label-handle" id="food">
+                  <div>
+                    <%= image_tag 'traiteur.png', class:'small-picture' %>
+                    <h4>Traiteur</h4>
+                  </div>
+                </div>
+                <div class="service-card chosen-service selected hidden label-handle" id="food">
+                  <div>
+                    <i class="far fa-check-circle"></i>
+                    <h4>Traiteur ajouté à votre recherche</h4>
+                  </div>
+                </div>
+              </label>
+            </div>
+          <%= check_box_tag "categories[]", :musique, checked=false, id: :categories_music, class: "categories" %>
+            <div class="col-xs-4">
+              <label for="categories_music">
+                <div class="service-card not-selected label-handle" id="music">
+                  <div>
+                    <%= image_tag 'musique.png', class:'small-picture' %>
+                    <h4>Musique</h4>
+                  </div>
+                </div>
+                <div class="chosen-service selected hidden label-handle" id="music">
+                  <div>
+                    <i class="far fa-check-circle"></i>
+                    <h4>Musique ajouté à votre recherche</h4>
+                  </div>
+                </div>
+              </label>
+            </div>
+          <%= check_box_tag "categories[]", :fleuriste, checked=false, id: :categories_flower, class: "categories" %>
+            <div class="col-xs-4">
+              <label for="categories_flower">
+                <div class="service-card not-selected label-handle" id="flower">
+                  <div>
+                    <%= image_tag 'fleuriste.png', class:'small-picture' %>
+                    <h4>Fleuriste</h4>
+                  </div>
+                </div>
+                <div class="chosen-service selected hidden label-handle" id="flower">
+                  <div>
+                    <i class="far fa-check-circle"></i>
+                    <h4>Fleuriste ajouté à votre recherche</h4>
+                  </div>
+                </div>
+              </label>
+            </div>
+          <%= check_box_tag "categories[]", :photographe, checked=false, id: :categories_photograph, class: "categories" %>
+            <div class="col-xs-4">
+              <label for="categories_photograph">
+                <div class="service-card not-selected label-handle" id="photo">
+                  <div>
+                    <%= image_tag 'photographe.png', class:'small-picture' %>
+                    <h4>Photographe</h4>
+                  </div>
+                </div>
+                <div class="chosen-service selected hidden label-handle" id="photo">
+                  <div>
+                    <i class="far fa-check-circle"></i>
+                    <h4>Photographe ajouté à votre recherche</h4>
+                  </div>
+                </div>
+              </label>
+            </div>
+          <%= check_box_tag "categories[]", :animations, checked=false, id: :categories_entertainment, class: "categories" %>
+            <div class="col-xs-4">
+              <label for="categories_entertainment">
+                <div class="service-card not-selected label-handle" id="animation">
+                  <div>
+                  <%= image_tag 'animations.png', class:'small-picture' %>
+                  <h4>Animations</h4>
+                  </div>
+                </div>
+                <div class="chosen-service selected hidden label-handle" id="animation">
+                  <div>
+                    <i class="far fa-check-circle"></i>
+                    <h4>Animations ajoutées à votre recherche</h4>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%= button_tag class:'btn-validate btn-search', type: "submit" do %>
+      <span>Rechercher</span>
+    <% end %>
+  <% end %>
+</div>
